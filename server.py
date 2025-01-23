@@ -10,6 +10,7 @@ from typing import Optional
 import uvicorn
 from starlette.responses import FileResponse
 import aismgen
+from pathlib import Path
 
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 
@@ -33,8 +34,15 @@ app.add_middleware(
 # Initialize the OAuth2
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
-# Initialize the Anthropic client
-client = anthropic.Anthropic(api_key="",)
+def get_api_key():
+    key_file = Path(__file__).parent.parent / 'claude_api.txt'
+    with open(key_file, 'r') as f:
+        key = f.read().strip()
+        return key
+
+
+#Initialize the Anthropic client
+client = anthropic.Anthropic(api_key=get_api_key())
 
 class ChatRequest(BaseModel):
     message: str
