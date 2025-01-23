@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Digital Solutions | Transform Your Business</title>
+    <meta name="description" content="Transform your business with our professional digital solutions. We offer web development, digital marketing, and email campaign services.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Base Styles */
+        :root {
+            --accent: #FF6B6B;
+            --background: #ffffff;
+            --text: #2C3E50;
+            --subtle: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .text-gradient {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #1a365d, #2563eb);
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+            color: white;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 1rem;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+        }
+    /* Existing styles */
+    
+    /* Additional styles */
+    body {
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+    }
+    
+    .fixed-gradient {
+        background: linear-gradient(-45deg, #1a365d, #2563eb, #1e40af, #1d4ed8);
+        background-size: 400% 400%;
+        animation: gradient 8s ease infinite;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+    }
+    
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
+    .content {
+        background: rgba(23, 23, 23, 0.95);
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+    
+    .terminal-header {
+        background: rgba(40, 40, 40, 0.95);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+        </style>
+    </head>
+    <body class="min-h-screen">
+        <!-- Fixed Background -->
+        <div class="fixed-gradient"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="nav-logo">DigitalPro</a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#process" class="nav-link">Process</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your Business with Professional Digital Solutions</h1>
+                <p>Elevate your digital presence and drive growth with our expert web development and marketing services. We help businesses like yours succeed in the digital age.</p>
+                <div class="flex gap-4 justify-center mb-12">
+                    <a href="#contact" class="btn btn-primary">Get Free Consultation</a>
+                    <a href="#portfolio" class="btn btn-secondary">See Our Work</a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold">98%</div>
+                        <div class="text-sm opacity-80">Client Satisfaction</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold">150+</div>
+                        <div class="text-sm opacity-80">Projects Completed</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold">45%</div>
+                        <div class="text-sm opacity-80">Average Growth</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Services Section -->
+                        }
+<body class="min-h-screen">
+    <!-- Fixed Background -->
+    <div class="fixed-gradient"></div>
+
+    <!-- Initial Hero Section -->
+    <section class="initial-hero">
+        <div class="text-center text-white">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Transform Your Business with Professional Digital Solutions</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Elevate your digital presence with our expert solutions. We help businesses grow through innovative web development and strategic marketing.</p>
+            <div class="flex justify-center gap-4 mb-12">
+                <button class="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-all font-semibold">Get Free Consultation</button>
+                <button class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white/10 transition-all">See Our Work</button>
+            </div>
+            <div class="grid grid-cols-3 gap-8 max-w-3xl mx-auto">
+                <div class="text-center">
+                    <div class="text-4xl font-bold">98%</div>
+                    <div class="text-sm opacity-80">Client Satisfaction</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold">150+</div>
+                    <div class="text-sm opacity-80">Projects Completed</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold">45%</div>
+                    <div class="text-sm opacity-80">Average Growth</div>
+                </div>
+            </div>
+            <div class="animate-bounce mt-12">
+                <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="min-h-screen flex items-center justify-center bg-transparent text-white py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center">How We Work</h2>
+            <div class="grid md:grid-cols-4 gap-8 relative">
+                <!-- Process Step Lines -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-white/20 -translate-y-1/2 z-0"></div>
+                
+                <!-- Step 1 -->
+                <div class="relative z-10 p-8 rounded-xl bg-white/10 backdrop-blur-sm">
+                    <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center">Discovery Call</h3>
+                    <p class="text-center">We learn about your business goals and challenges.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10 p-8 rounded-xl bg-white/10 backdrop-blur-sm">
+                    <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center">Strategy Development</h3>
+                    <p class="text-center">We create a customized plan for your success.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 p-8 rounded-xl bg-white/10 backdrop-blur-sm">
+                    <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center">Implementation</h3>
+                    <p class="text-center">We execute the strategy with precision.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative z-10 p-8 rounded-xl bg-white/10 backdrop-blur-sm">
+                    <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-xl font-bold">4</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center">Growth & Optimization</h3>
+                    <p class="text-center">We continuously improve and scale results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio Section -->
+  <!-- Services Section -->
+    <section class="min-h-screen flex items-center justify-center bg-transparent text-white py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center">Our Core Services</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-xl bg-white/10 backdrop-blur-sm">
+                    <i class="fas fa-laptop-code text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-4">Landing Pages & Websites</h3>
+                    <p class="mb-4">Custom-built, responsive websites that convert visitors into customers.</p>
+                    <p class="text-sm font-semibold">→ Increase online presence</p>
+                </div>
+                <div class="p-8 rounded-xl bg-white/10 backdrop-blur-sm">
+                    <i class="fas fa-bullhorn text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-4">Digital Marketing</h3>
+                    <p class="mb-4">Strategic campaigns that drive traffic and generate qualified leads.</p>
+                    <p class="text-sm font-semibold">→ Boost brand awareness</p>
+                </div>
+                <div class="p-8 rounded-xl bg-white/10 backdrop-blur-sm">
+                    <i class="fas fa-envelope text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-4">Email Campaigns</h3>
+                    <p class="mb-4">Targeted email marketing that nurtures leads and drives sales.</p>
+                    <p class="text-sm font-semibold">→ Increase customer retention</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 w-full bg-[#1a1a1a] z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold">Your Brand</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-blue-600">Home</a>
+                    <a href="#products" class="hover:text-blue-600">Products</a>
+                    <a href="#portfolio" class="hover:text-blue-600">Portfolio</a>
+                    <a href="#testimonials" class="hover:text-blue-600">Testimonials</a>
+                    <a href="#contact" class="hover:text-blue-600">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content Container -->
+    <div class="content">
+        <div class="terminal-header">
+            <div class="terminal-dot" style="background: #FF5F56;"></div>
+            <div class="terminal-dot" style="background: #FFBD2E;"></div>
+            <div class="terminal-dot" style="background: #27C93F;"></div>
+        </div>
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center pt-16">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-5xl md:text-7xl font-bold mb-8">Create Something Amazing</h1>
+                <p class="text-xl md:text-2xl mb-12 max-w-2xl mx-auto">Transform your ideas into reality with our innovative solutions and expert team.</p>
+                <div class="flex justify-center gap-4">
+                    <button class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700">Get Started</button>
+                    <button class="border border-gray-300 px-8 py-3 rounded-lg hover:bg-white/10">Learn More</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Overview -->
+        <section id="products" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-16">Our Solutions</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-6 rounded-xl hover:bg-white/5 transition-all">
+                        <h3 class="text-xl font-semibold mb-4">Digital Strategy</h3>
+                        <p class="text-gray-600">Comprehensive digital solutions tailored to your business needs.</p>
+                    </div>
+                    <div class="p-6 rounded-xl hover:bg-white/5 transition-all">
+                        <h3 class="text-xl font-semibold mb-4">Web Development</h3>
+                        <p class="text-gray-600">Custom websites and applications built with modern technologies.</p>
+                    </div>
+                    <div class="p-6 rounded-xl hover:bg-white/5 transition-all">
+                        <h3 class="text-xl font-semibold mb-4">Brand Identity</h3>
+                        <p class="text-gray-600">Create a lasting impression with powerful brand design.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-16">Our Work</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Portfolio items (add your own) -->
+                    <div class="rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all">
+                        <div class="aspect-video bg-gray-200"></div>
+                        <div class="p-4">
+                            <h3 class="font-semibold mb-2">Project Name</h3>
+                            <p class="text-sm text-gray-600">Brief project description</p>
+                        </div>
+                    </div>
+                    <!-- Add more portfolio items as needed -->
+                <h2 class="text-4xl font-bold text-center mb-16">Case Studies</h2>
+                <div class="max-w-4xl mx-auto">
+                    <!-- Featured Case Study -->
+                    <div class="bg-white/5 rounded-2xl p-8 mb-12">
+                        <div class="grid md:grid-cols-2 gap-8 mb-8">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4">E-Commerce Transformation</h3>
+                                <div class="mb-6">
+                                    <h4 class="text-lg font-semibold mb-2">The Challenge</h4>
+                                    <p class="text-gray-400">Local retailer struggling with outdated website and low online sales.</p>
+                                </div>
+                                <div class="mb-6">
+                                    <h4 class="text-lg font-semibold mb-2">Our Solution</h4>
+                                    <p class="text-gray-400">Complete e-commerce redesign with modern UX and mobile-first approach.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-2">The Results</h4>
+                                    <ul class="space-y-2 text-gray-400">
+                                        <li>• 250% increase in online sales</li>
+                                        <li>• 40% improvement in conversion rate</li>
+                                        <li>• 65% reduction in cart abandonment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="bg-gray-800 rounded-lg p-4">
+                                    <div class="text-sm text-gray-400 mb-2">Before</div>
+                                    <div class="aspect-video bg-gray-700 rounded"></div>
+                                </div>
+                                <div class="bg-gray-800 rounded-lg p-4">
+                                    <div class="text-sm text-gray-400 mb-2">After</div>
+                                    <div class="aspect-video bg-gray-700 rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-16">What Clients Say</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="p-6 rounded-xl hover:bg-white/5 transition-all">
+                        <p class="mb-4">"Outstanding service and results. Highly recommended!"</p>
+                        <div class="font-semibold">John Doe</div>
+                        <div class="text-sm text-gray-600">CEO, Company Name</div>
+                    </div>
+                    <!-- Add more testimonials as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-16">Get in Touch</h2>
+                <div class="max-w-md mx-auto">
+                    <form class="space-y-6">
+                        <div>
+                            <input type="text" placeholder="Your Name" class="w-full p-3 rounded-lg bg-white/10 border border-gray-300">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Your Email" class="w-full p-3 rounded-lg bg-white/10 border border-gray-300">
+                        </div>
+                        <div>
+                            <textarea placeholder="Your Message" rows="4" class="w-full p-3 rounded-lg bg-white/10 border border-gray-300"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 border-t border-gray-200">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Your Brand</h3>
+                        <p class="text-gray-600">Creating amazing digital experiences.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-600 hover:text-blue-600">Home</a></li>
+                            <li><a href="#products" class="text-gray-600 hover:text-blue-600">Products</a></li>
+                            <li><a href="#portfolio" class="text-gray-600 hover:text-blue-600">Portfolio</a></li>
+                            <li><a href="#contact" class="text-gray-600 hover:text-blue-600">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Connect</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-600 hover:text-blue-600">Twitter</a>
+                            <a href="#" class="text-gray-600 hover:text-blue-600">LinkedIn</a>
+                            <a href="#" class="text-gray-600 hover:text-blue-600">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-gray-200 text-center text-gray-600">
+                    <p>&copy; 2024 Your Brand. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.opacity = '1';
+            } else {
+                backToTopButton.style.opacity = '0';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        // Terminal reveal on scroll
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const terminal = document.querySelector('.content');
+            
+            // Calculate how close to bottom (within last viewport height)
+            const scrollPercentage = (scrollPosition + windowHeight) / documentHeight;
+            
+            if (scrollPercentage >= 0.95) { // When very close to bottom
+                terminal.style.opacity = '1';
+                terminal.style.transform = 'translateY(0)';
+                document.body.style.overflow = 'hidden'; // Lock scrolling when terminal is shown
+            } else {
+                terminal.style.opacity = '0';
+                terminal.style.transform = 'translateY(100px)';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
