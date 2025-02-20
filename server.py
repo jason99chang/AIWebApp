@@ -11,6 +11,7 @@ import uvicorn
 from starlette.responses import FileResponse
 import aismgen
 from pathlib import Path
+import json
 
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 
@@ -54,6 +55,23 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     response: str
     usage: dict
+
+class current_profile(BaseModel):
+    name: str
+    category: str
+    goal: str
+    tone: str
+
+def get_profile(index: int):
+    #first get all profiles 
+    with open('profiles.json', 'r') as f:
+        loaded_data = json.load(f)
+    print("All json data:")
+    print(loaded_data)
+    print("Selected profile:")
+    current_profile = loaded_data["profiles"][index]
+    print(current_profile)
+    print("Done")
 
 @app.post("/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest):
@@ -108,6 +126,7 @@ async def clear_history(chat_id: str = "default"):
 
 @app.get("/")
 async def read_root():
+    get_profile(0)
     return FileResponse('templates/index.html')
 
 @app.get("/gen_page")

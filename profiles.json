@@ -1,0 +1,10 @@
+{
+	"profiles" : [
+		{
+			"name" : "Jason",
+			"type" : "person",
+			"goal" : "Gain more attention to posts",
+			"tone" : "Casual, professional, intelligent"
+		}
+	]
+}
